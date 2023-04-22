@@ -1,0 +1,22 @@
+header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+nav > ul > li {
+  margin-bottom: 0.5rem;
+}
+
+nav > ul > li > a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav > a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
