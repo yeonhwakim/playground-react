@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const tabList = [];
+const tabList = [{ title: "REACT-SORTABLE-JS", path: "/react-sortable-js" }];
 
 function Navbar() {
   return (

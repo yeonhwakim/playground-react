@@ -5,12 +5,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Error from "./components/Error";
+import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSortableJSByUseSatus";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <Error />,
+    children: [
+      { path: "/react-sortable-js", element: <ReactSortableJSByUseSatus /> },
+    ],
   },
 ]);
 
