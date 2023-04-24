@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Error from "./components/Error";
 import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSortableJSByUseSatus";
+import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortableJSByReducer";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,14 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <Error />,
     children: [
-      { path: "/react-sortable-js", element: <ReactSortableJSByUseSatus /> },
+      {
+        path: "react-sortable-js",
+        errorElement: <Error />,
+        children: [
+          { path: "by-useState", element: <ReactSortableJSByUseSatus /> },
+          { path: "by-reducer", element: <ReactSortableJSByReducer /> },
+        ],
+      },
     ],
   },
 ]);
