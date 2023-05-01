@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useCallback, useEffect, useReducer, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 
 import "./styles.css";
@@ -16,20 +16,29 @@ const color = [
 
 export default function ReactSortableJSByReducer() {
   const [list, dispatch] = useReducer(reactSortableReducer, color);
-  const [state, setState] = useState(filterCheckedLsit(color));
 
   useEffect(() => {
     localStorage.setItem("test", JSON.stringify(list));
   }, [list]);
 
-  function handleChange() {
+  const handleSorted = useCallback((state) => {
     dispatch({
       type: "change",
       sortedList: state.map((item, index) => {
         return { ...item, index };
       }),
     });
-  }
+  }, []);
+
+  return <List color={color} handleSorted={handleSorted} />;
+}
+
+function List({ color, handleSorted }) {
+  const [state, setState] = useState(filterCheckedLsit(color));
+
+  useEffect(() => {
+    handleSorted(state);
+  }, [handleSorted, state]);
 
   return (
     <ReactSortable
@@ -39,7 +48,6 @@ export default function ReactSortableJSByReducer() {
       animation="200"
       easing="ease-out"
       handle=".my-handle"
-      onEnd={handleChange}
     >
       {state.map((item) => (
         <li key={item.id} className="item">
