@@ -12,7 +12,7 @@ function App() {
           ? "REACT LIBRARY JS"
           : location.pathname.replace("/", "")}
       </header>
-      <Navbar />
+      {location.pathname === "/" && <Navbar />}
       <Outlet />
     </div>
   );
