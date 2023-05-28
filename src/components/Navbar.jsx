@@ -10,6 +10,10 @@ const tabList = [
     title: "REACT-SORTABLE-JS-BY-REDUCER",
     path: "/react-sortable-js/by-reducer",
   },
+  {
+    title: "INFINITE-SCROLL",
+    path: "/infinite-scroll",
+  },
 ];
 
 function Navbar() {

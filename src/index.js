@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import Error from "./components/Error";
 import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSortableJSByUseSatus";
 import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortableJSByReducer";
+import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
           { path: "by-useState", element: <ReactSortableJSByUseSatus /> },
           { path: "by-reducer", element: <ReactSortableJSByReducer /> },
         ],
+      },
+      {
+        path: "infinite-scroll",
+        errorElement: <Error />,
+        children: [{ path: "", element: <InfiniteScroll /> }],
       },
     ],
   },
