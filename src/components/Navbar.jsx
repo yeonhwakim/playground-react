@@ -14,6 +14,10 @@ const tabList = [
     title: "INFINITE-SCROLL",
     path: "/infinite-scroll",
   },
+  {
+    title: "INFINITE-SCROLL-2",
+    path: "/infinite-scroll/2",
+  },
 ];
 
 function Navbar() {
