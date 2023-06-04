@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 
 import "./index.css";
 
-import useIntersectionObserver from "./useIntersectionObserver";
 import { useState } from "react";
 
 function InfiniteScroll() {
@@ -14,6 +13,7 @@ function InfiniteScroll() {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            observer.unobserve(entry.target);
             setCount(count + 1);
             console.log("api called" + count);
           }
@@ -21,12 +21,11 @@ function InfiniteScroll() {
       },
       { threshold: 1 }
     );
-    target && observer.unobserve(target.current);
     observer.observe(target.current);
     return () => {
-      target && observer.unobserve(target.current);
+      observer.disconnect();
     };
-  }, [count]);
+  }, [target, count]);
 
   return (
     <div className="scorllBox">
