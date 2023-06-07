@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSortableJSByUseSatus";
 import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortableJSByReducer";
 import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
+import InfiniteScroll2 from "./components/infinite-scroll/InfiniteScroll2";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,10 @@ const router = createBrowserRouter([
       {
         path: "infinite-scroll",
         errorElement: <Error />,
-        children: [{ path: "", element: <InfiniteScroll /> }],
+        children: [
+          { path: "", element: <InfiniteScroll /> },
+          { path: "2", element: <InfiniteScroll2 /> },
+        ],
       },
     ],
   },

@@ -12,3 +12,5 @@ react-sortablejs example
 infinite scroll using IntersectionObserver example
 
 - [useIntersectionObserver] :https://github.com/yeonhwakim/react-library-example/blob/main/src/components/infinite-scroll/InfiniteScroll.jsx
+
+- [useIntersectionObserver2] :https://github.com/yeonhwakim/react-library-example/blob/main/src/components/infinite-scroll/InfiniteScroll2.jsx
