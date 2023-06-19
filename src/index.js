@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSortableJSByUseSatus";
 import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortableJSByReducer";
 import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
+import Login from "./components/firebase/Login";
+import Database from "./components/firebase/Database";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
         path: "infinite-scroll",
         errorElement: <Error />,
         children: [{ path: "", element: <InfiniteScroll /> }],
+      },
+      {
+        path: "firebase",
+        errorElement: <Error />,
+        children: [
+          { path: "login", element: <Login /> },
+          { path: "database", element: <Database /> },
+        ],
       },
     ],
   },

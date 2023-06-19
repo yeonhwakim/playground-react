@@ -14,6 +14,14 @@ const tabList = [
     title: "INFINITE-SCROLL",
     path: "/infinite-scroll",
   },
+  {
+    title: "FIRE-BASE-LOGIN",
+    path: "/firebase/login",
+  },
+  {
+    title: "FIRE-BASE_DATABASE",
+    path: "/firebase/database",
+  },
 ];
 
 function Navbar() {
