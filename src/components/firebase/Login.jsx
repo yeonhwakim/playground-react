@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { initializeApp } from "firebase/app";
+import app from "./firebase";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -9,11 +9,6 @@ import {
   signOut,
 } from "firebase/auth";
 
-const firebaseConfig = {
-...
-};
-
-const app = initializeApp(firebaseConfig);
 const authService = getAuth(app);
 const provider = new GoogleAuthProvider();
 
