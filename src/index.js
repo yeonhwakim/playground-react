@@ -9,6 +9,7 @@ import ReactSortableJSByUseSatus from "./components/react-sortable-js/ReactSorta
 import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortableJSByReducer";
 import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
 import Login from "./components/firebase/Login";
+import Database from "./components/firebase/Database";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,10 @@ const router = createBrowserRouter([
       {
         path: "firebase",
         errorElement: <Error />,
-        children: [{ path: "", element: <Login /> }],
+        children: [
+          { path: "login", element: <Login /> },
+          { path: "database", element: <Database /> },
+        ],
       },
     ],
   },
