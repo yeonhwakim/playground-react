@@ -10,6 +10,7 @@ import ReactSortableJSByReducer from "./components/react-sortable-js/ReactSortab
 import InfiniteScroll from "./components/infinite-scroll/InfiniteScroll";
 import Login from "./components/firebase/Login";
 import Database from "./components/firebase/Database";
+import ImageUploading from "./components/cloudinary/ImageUploading";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
           { path: "login", element: <Login /> },
           { path: "database", element: <Database /> },
         ],
+      },
+      {
+        path: "cloudinary",
+        errorElement: <Error />,
+        children: [{ path: "image-upload", element: <ImageUploading /> }],
       },
     ],
   },

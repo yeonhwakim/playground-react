@@ -22,6 +22,10 @@ const tabList = [
     title: "FIRE-BASE_DATABASE",
     path: "/firebase/database",
   },
+  {
+    title: "CLOUDINARY-IMAGE-UPLOADING",
+    path: "/cloudinay/image-uploading",
+  },
 ];
 
 function Navbar() {
