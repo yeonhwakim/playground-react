@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "cloudinary",
         errorElement: <Error />,
-        children: [{ path: "image-upload", element: <ImageUploading /> }],
+        children: [{ path: "image-uploading", element: <ImageUploading /> }],
       },
     ],
   },

@@ -24,7 +24,7 @@ const tabList = [
   },
   {
     title: "CLOUDINARY-IMAGE-UPLOADING",
-    path: "/cloudinay/image-uploading",
+    path: "/cloudinary/image-uploading",
   },
 ];
 
