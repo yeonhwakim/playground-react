@@ -10,6 +10,7 @@ import {
   child,
   update,
   remove,
+  push,
 } from "firebase/database";
 
 const db = getDatabase(app);
@@ -41,6 +42,14 @@ function Database() {
       isAdmin: false,
     });
   };
+  const handleClickAddList = () => {
+    const userListRef = ref(db, "users");
+    const newProductsRef = push(userListRef);
+    set(newProductsRef, {
+      email: "yeonhwa67172@gmail.com",
+      isAdmin: false,
+    });
+  };
   const handleClickDelete = () => {
     remove(ref(db, "/users"));
   };
@@ -49,6 +58,7 @@ function Database() {
       <button onClick={handleClickCreate}>CREATE</button>
       <button onClick={handleClickRead}>READ</button>
       <button onClick={handleClickUpdate}>UPDATE</button>
+      <button onClick={handleClickAddList}>ADDLIST</button>
       <button onClick={handleClickDelete}>DELETE</button>
     </div>
   );
